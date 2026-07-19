@@ -1,0 +1,28 @@
+# Herramientas / config local
+.claude/
+
+# Entornos y variables sensibles
+.env
+.env.*
+!.env.example
+
+# Dependencias
+node_modules/
+vendor/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Builds y salidas
+dist/
+build/
+out/
+*.log
+
+# Sistema operativo / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
