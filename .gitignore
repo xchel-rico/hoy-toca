@@ -26,3 +26,22 @@ Thumbs.db
 .idea/
 .vscode/
 *.swp
+*.iml
+*.ipr
+*.iws
+
+# Flutter / Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/coverage/
+**/doc/api/
+app.*.symbols
+app.*.map.json
+
+# Android (build outputs; android/.gitignore cubre el resto del módulo)
+/android/app/debug
+/android/app/profile
+/android/app/release

@@ -33,9 +33,9 @@ android/...
 
 **Purpose**: Inicialización del proyecto Flutter
 
-- [ ] T001 Crear el esqueleto del proyecto Flutter (`pubspec.yaml` con nombre de app, `lib/`, `test/`,
+- [X] T001 Crear el esqueleto del proyecto Flutter (`pubspec.yaml` con nombre de app, `lib/`, `test/`,
       `android/`) según la estructura de `plan.md` › Project Structure
-- [ ] T002 Agregar dependencias runtime y dev a `pubspec.yaml`: `flutter_riverpod`, `drift`,
+- [X] T002 Agregar dependencias runtime y dev a `pubspec.yaml`: `flutter_riverpod`, `drift`,
       `sqlite3_flutter_libs`, `flutter_local_notifications`, `fl_chart`, `uuid`; dev: `drift_dev`,
       `build_runner`, `flutter_test`, `mocktail` (ver `plan.md` › Technical Context)
 - [ ] T003 [P] Configurar `analysis_options.yaml` (lint rules) en la raíz del proyecto
