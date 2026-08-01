@@ -38,7 +38,7 @@ android/...
 - [X] T002 Agregar dependencias runtime y dev a `pubspec.yaml`: `flutter_riverpod`, `drift`,
       `sqlite3_flutter_libs`, `flutter_local_notifications`, `fl_chart`, `uuid`; dev: `drift_dev`,
       `build_runner`, `flutter_test`, `mocktail` (ver `plan.md` › Technical Context)
-- [ ] T003 [P] Configurar `analysis_options.yaml` (lint rules) en la raíz del proyecto
+- [X] T003 [P] Configurar `analysis_options.yaml` (lint rules) en la raíz del proyecto
 - [ ] T004 [P] Configurar `android/app/build.gradle` (minSdk 24, applicationId) según `plan.md` ›
       Target Platform
 - [ ] T005 [P] Agregar el permiso `POST_NOTIFICATIONS` en
