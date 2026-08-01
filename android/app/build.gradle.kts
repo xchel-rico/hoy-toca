@@ -15,11 +15,12 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId = "com.example.hoytoca.hoy_toca"
-        // You can update the following values to match your application needs.
-        // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = flutter.minSdkVersion
+        // minSdk fijado explícitamente en 24 (Android 7.0) según plan.md › Target Platform,
+        // en vez de heredar el default de la herramienta Flutter, para que una futura
+        // actualización del SDK de Flutter no cambie el mínimo soportado sin que quede
+        // registrado en este archivo.
+        minSdk = 24
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
