@@ -41,7 +41,7 @@ android/...
 - [X] T003 [P] Configurar `analysis_options.yaml` (lint rules) en la raíz del proyecto
 - [X] T004 [P] Configurar `android/app/build.gradle` (minSdk 24, applicationId) según `plan.md` ›
       Target Platform
-- [ ] T005 [P] Agregar el permiso `POST_NOTIFICATIONS` en
+- [X] T005 [P] Agregar el permiso `POST_NOTIFICATIONS` en
       `android/app/src/main/AndroidManifest.xml` (FR-018; único permiso sensible, mínimo privilegio
       — ver `research.md` D4)
 
