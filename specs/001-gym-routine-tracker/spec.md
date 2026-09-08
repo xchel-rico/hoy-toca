@@ -26,6 +26,17 @@
   una sesión; si un día no entrena, la próxima vez que abra la app sigue viendo pendiente el mismo
   tipo de día del ciclo (no se "pierde" ni se salta).
 
+### Session 2026-09-08
+
+- Q: Cuando la app pasa a segundo plano (el usuario sale/suspende/bloquea el celular) o se cierra
+  por completo durante una sesión activa, ¿qué debe contar `durationSeconds` de la sesión? → A:
+  Solo tiempo activo: el cronómetro se pausa apenas la app deja de estar en primer plano y reanuda
+  al volver; el acumulado se persiste junto al resto del estado de la sesión. Un cierre total (el
+  proceso termina, batería agotada) también excluye el hueco de segundo plano; el margen de error
+  queda acotado (nunca sobreestima) al tiempo transcurrido desde el último punto persistido
+  (autosave de una serie o el momento en que la app dejó el primer plano), nunca al tiempo real
+  fuera de la app.
+
 ## User Scenarios & Testing *(mandatory)*
 
 ### User Story 1 - Definir rutina base y completar una sesión de entrenamiento (Priority: P1) 🎯 MVP
@@ -248,14 +259,19 @@ que toque ese mismo tipo de día, el ejercicio original planeado sigue siendo el
   durante una sesión activa; el registro de la sesión MUST reflejar el ejercicio realmente
   realizado, sin alterar la definición del tipo de día original.
 - **FR-017**: El sistema MUST proveer un cronómetro que mida la duración total de la sesión de
-  entrenamiento.
+  entrenamiento, contando **únicamente tiempo activo**: se pausa en cualquier transición fuera de
+  primer plano (background/suspensión) y reanuda al volver a primer plano; el tiempo fuera de la
+  app (incluido un cierre total del proceso) MUST excluirse del total (ver Clarifications, sesión
+  2026-09-08).
 - **FR-018**: El sistema MUST proveer un temporizador de descanso entre series, configurable por el
   usuario, que notifique al usuario cuando termina.
 - **FR-024**: El sistema MUST guardar cada serie registrada de forma incremental en el dispositivo
   apenas se ingresa, sin esperar a que la sesión finalice. Si la app se cierra inesperadamente
   durante una sesión activa, el sistema MUST permitir retomarla exactamente en el estado en que
   quedó (ejercicios ya completados, series ingresadas y cronómetro) la próxima vez que se abra la
-  app.
+  app. El acumulado de tiempo activo del cronómetro (FR-017) MUST persistirse cada vez que la app
+  deja el primer plano y en cada autosave de serie, de forma que un cierre total del proceso nunca
+  infle la duración registrada más allá del tiempo transcurrido desde el último punto persistido.
 - **FR-025**: El campo de peso por serie MUST ser obligatorio para ejercicios cuyo equipo no sea
   "peso corporal". Para ejercicios de equipo "peso corporal", el peso por serie MUST ser opcional
   (puede quedar vacío, o completarse si el usuario agregó peso extra). Cuando no hay peso

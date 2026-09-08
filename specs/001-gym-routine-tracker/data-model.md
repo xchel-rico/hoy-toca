@@ -158,12 +158,17 @@ Una sesión de entrenamiento (en curso o finalizada). (FR-019, FR-024)
 | status | TEXT (enum) | NOT NULL. `inProgress` o `finished` |
 | startedAt | INTEGER | NOT NULL (epoch ms) |
 | endedAt | INTEGER | NULLABLE (solo al finalizar) |
-| durationSeconds | INTEGER | NULLABLE. Duración total medida por el cronómetro (FR-017) |
+| durationSeconds | INTEGER | NOT NULL, default 0. Acumulado de **tiempo activo** medido por el cronómetro (FR-017): solo cuenta mientras la app está en primer plano, nunca tiempo en background/suspendida/cerrada |
 | createdAt / updatedAt | INTEGER | NOT NULL |
 
 - **Estado (transiciones)**: `inProgress → finished`. Como máximo una sesión `inProgress` por
   usuario a la vez → habilita reanudar tras cierre inesperado (FR-024).
 - Varias sesiones el mismo día se distinguen por `startedAt` (Edge Case del spec).
+- **Persistencia de `durationSeconds`** (FR-017, FR-024, ver Clarifications sesión 2026-09-08):
+  se actualiza de forma incremental — en cada transición de lifecycle fuera de `resumed`
+  (pausa/salida/suspensión) y en cada autosave de serie — sumando el segmento activo transcurrido.
+  Nunca se calcula como `ahora - startedAt`, para no incluir tiempo en background o el hueco de un
+  cierre total del proceso.
 
 ---
 
