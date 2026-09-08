@@ -57,7 +57,7 @@ User Stories
 
 **⚠️ CRITICAL**: Ninguna User Story puede empezar hasta que esta fase esté completa
 
-- [ ] T006 [P] Definir enums centrales en `lib/core/enums.dart`: `EquipmentType`, `PatternMode`,
+- [X] T006 [P] Definir enums centrales en `lib/core/enums.dart`: `EquipmentType`, `PatternMode`,
       `SessionStatus`, `ExerciseRating`, `SetType` (ver `data-model.md`)
 - [ ] T007 [P] Definir tabla drift `Users` en `lib/data/database/tables/users_table.dart`
       (convenciones globales: `id` UUID, `createdAt`/`updatedAt` — ver `data-model.md`)
