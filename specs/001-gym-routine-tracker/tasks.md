@@ -59,17 +59,17 @@ User Stories
 
 - [X] T006 [P] Definir enums centrales en `lib/core/enums.dart`: `EquipmentType`, `PatternMode`,
       `SessionStatus`, `ExerciseRating`, `SetType` (ver `data-model.md`)
-- [ ] T007 [P] Definir tabla drift `Users` en `lib/data/database/tables/users_table.dart`
+- [X] T007 [P] Definir tabla drift `Users` en `lib/data/database/tables/users_table.dart`
       (convenciones globales: `id` UUID, `createdAt`/`updatedAt` — ver `data-model.md`)
-- [ ] T008 [P] Definir tablas drift `Exercises` + `ExerciseSubstitutes` en
+- [X] T008 [P] Definir tablas drift `Exercises` + `ExerciseSubstitutes` en
       `lib/data/database/tables/exercises_table.dart` (incluye `rating`, `isArchived`,
       `externalGuideUrl` — FR-001, FR-003, FR-023, FR-027)
-- [ ] T009 [P] Definir tablas drift `DayTypes` + `DayTypeExercises` en
+- [X] T009 [P] Definir tablas drift `DayTypes` + `DayTypeExercises` en
       `lib/data/database/tables/day_types_table.dart` (incluye `targetRepMin/Max` y
       `supersetGroupId` inerte — FR-005)
-- [ ] T010 [P] Definir tablas drift `RoutinePattern` + `WeeklyPatternSlot` + `CyclicPatternSlot` +
+- [X] T010 [P] Definir tablas drift `RoutinePattern` + `WeeklyPatternSlot` + `CyclicPatternSlot` +
       `DayOverride` en `lib/data/database/tables/routine_pattern_table.dart` (FR-006 a FR-011)
-- [ ] T011 [P] Definir tablas drift `WorkoutSession` + `SessionExerciseLog` + `SetLog` en
+- [X] T011 [P] Definir tablas drift `WorkoutSession` + `SessionExerciseLog` + `SetLog` en
       `lib/data/database/tables/sessions_table.dart` (incluye `setType`/`rpe` inertes — FR-012 a
       FR-020, FR-024, FR-025)
 - [ ] T012 Ensamblar `AppDatabase` en `lib/data/database/app_database.dart` con todas las tablas de
