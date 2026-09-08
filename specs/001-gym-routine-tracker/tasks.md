@@ -44,6 +44,9 @@ android/...
 - [X] T005 [P] Agregar el permiso `POST_NOTIFICATIONS` en
       `android/app/src/main/AndroidManifest.xml` (FR-018; único permiso sensible, mínimo privilegio
       — ver `research.md` D4)
+- [X] T005a Activar core library desugaring en `android/app/build.gradle.kts`
+      (`isCoreLibraryDesugaringEnabled = true` + dependencia `desugar_jdk_libs`), requerido por
+      `flutter_local_notifications` — descubierto durante build
 
 ---
 
