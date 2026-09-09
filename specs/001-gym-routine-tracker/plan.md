@@ -22,6 +22,9 @@ Firebase/auth/sync/compartir quedan diferidos a versiones futuras (COULD HAVE en
 - `flutter_riverpod` — gestión de estado (elegida por el usuario; testeable, Principio II)
 - `drift` (+ `sqlite3_flutter_libs`) — SQLite tipado con migraciones versionadas (elegida por el
   usuario; soporta integridad de datos, Principio VIII)
+- `drift_flutter` — resuelve la ruta del archivo de base de datos por plataforma (evita escribir a
+  mano la conexión nativa vía `path_provider`); agregada durante T012 al ensamblar `AppDatabase`,
+  no estaba en el listado original de T002 (ver `research.md` D2)
 - `flutter_local_notifications` — notificación de fin de descanso incluso en segundo plano (FR-018)
 - `fl_chart` — gráficas de progreso (FR-020)
 - `uuid` — generación de IDs estables para PKs (sync-readiness, Principio VI)

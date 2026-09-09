@@ -72,8 +72,11 @@ User Stories
 - [X] T011 [P] Definir tablas drift `WorkoutSession` + `SessionExerciseLog` + `SetLog` en
       `lib/data/database/tables/sessions_table.dart` (incluye `setType`/`rpe` inertes — FR-012 a
       FR-020, FR-024, FR-025)
-- [ ] T012 Ensamblar `AppDatabase` en `lib/data/database/app_database.dart` con todas las tablas de
+- [X] T012 Ensamblar `AppDatabase` en `lib/data/database/app_database.dart` con todas las tablas de
       T007–T011, `schemaVersion = 1` y `PRAGMA foreign_keys = ON` (depende de T007–T011)
+- [X] T012a Agregar `drift_flutter` a `pubspec.yaml` para resolver la ruta del archivo de base de
+      datos por plataforma, requerido por `AppDatabase` — descubierto durante T012, no estaba en el
+      listado de T002 (ver `research.md` D2, adenda)
 - [ ] T013 Implementar el bootstrap de primer arranque (crear la fila `User` local por defecto) en
       `lib/data/database/app_database.dart`, con test básico en
       `test/data/bootstrap_test.dart` (depende de T012)

@@ -45,6 +45,12 @@ datos de usuario**. El costo (codegen con `build_runner`) es un paso mecánico b
   manuales, integridad referencial a mano) y las agregaciones para gráficas (volumen, máx.) son
   menos naturales. Rechazado por Principio I y VIII.
 
+**Adenda (T012)**: Al ensamblar `AppDatabase` se detectó que faltaba definir cómo drift localiza el
+archivo `.sqlite` en el dispositivo — ni el listado de dependencias de T002 ni esta decisión lo
+cubrían. Se agregó `drift_flutter` (paquete oficial del equipo de drift) en vez de escribir a mano
+la conexión nativa con `path_provider`: una sola dependencia nueva, sin boilerplate propio de
+resolución de rutas por plataforma. Ver `plan.md` › Primary Dependencies.
+
 ---
 
 ## D3. Gestión de estado — Riverpod  *[elección del usuario]*
