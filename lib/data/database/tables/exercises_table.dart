@@ -25,7 +25,9 @@ class Exercises extends Table {
 class ExerciseSubstitutes extends Table {
   TextColumn get id => text()();
   TextColumn get ownerUserId => text().references(Users, #id)();
+  @ReferenceName('substituteLinks')
   TextColumn get exerciseId => text().references(Exercises, #id)();
+  @ReferenceName('substituteOfLinks')
   TextColumn get substituteExerciseId => text().references(Exercises, #id)();
   IntColumn get createdAt => integer()();
   IntColumn get updatedAt => integer()();

@@ -28,8 +28,10 @@ class SessionExerciseLogs extends Table {
   TextColumn get id => text()();
   TextColumn get ownerUserId => text().references(Users, #id)();
   TextColumn get sessionId => text().references(WorkoutSessions, #id)();
+  @ReferenceName('plannedInSessionLogs')
   TextColumn get plannedExerciseId =>
       text().nullable().references(Exercises, #id)();
+  @ReferenceName('performedInSessionLogs')
   TextColumn get performedExerciseId => text().references(Exercises, #id)();
   IntColumn get position => integer()();
   TextColumn get notes => text().nullable()();
